@@ -1,21 +1,387 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>My Cloud Website</title>
-<link rel="stylesheet" href="style.css">
-</head>
+# Bakery Website – Full Code
 
+## index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Crumbs Bakery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
 
-<h1>Welcome to My Cloud Website</h1>
+<header>
+    <nav class="navbar">
+        <h1 class="logo">Sweet Crumbs</h1>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</nav>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-<p>This website is hosted on GitHub cloud platform.</p>
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h2>Freshly Baked Happiness Every Day</h2>
+        <p>Delicious cakes, pastries, breads, and cookies made with love and premium ingredients.</p>
+        <a href="#menu" class="btn">Explore Menu</a>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop" alt="Bakery">
+    </div>
+
+    <div class="about-text">
+        <h2>About Our Bakery</h2>
+        <p>
+            Sweet Crumbs Bakery has been serving freshly baked treats since 2018.
+            We specialize in artisan breads, custom cakes, cupcakes, cookies,
+            and pastries crafted with passion.
+        </p>
+
+        <p>
+            Every product is baked daily using fresh ingredients to bring warmth,
+            sweetness, and joy to your day.
+        </p>
+    </div>
+</section>
+
+<section class="menu" id="menu">
+    <h2 class="section-title">Our Special Menu</h2>
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop" alt="Cake">
+            <h3>Chocolate Cake</h3>
+            <p>Rich chocolate layered cake with creamy frosting.</p>
+            <span>$18</span>
+        </div>
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1555507036-ab794f4afe5a?q=80&w=1200&auto=format&fit=crop" alt="Cupcake">
+            <h3>Vanilla Cupcakes</h3>
+            <p>Soft cupcakes topped with buttercream frosting.</p>
+            <span>$10</span>
+        </div>
+
+        <div class="menu-card">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop" alt="Bread">
+            <h3>Fresh Bread</h3>
+            <p>Warm artisan bread baked every morning.</p>
+            <span>$7</span>
+        </div>
+
+    </div>
+</section>
+
+<section class="gallery" id="gallery">
+    <h2 class="section-title">Bakery Gallery</h2>
+
+    <div class="gallery-container">
+        <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?q=80&w=1200&auto=format&fit=crop" alt="Gallery 1">
+        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?q=80&w=1200&auto=format&fit=crop" alt="Gallery 2">
+        <img src="https://images.unsplash.com/photo-1464306076886-da185f6a9d05?q=80&w=1200&auto=format&fit=crop" alt="Gallery 3">
+        <img src="https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1200&auto=format&fit=crop" alt="Gallery 4">
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Sweet Crumbs Bakery | All Rights Reserved</p>
+</footer>
 
 </body>
 </html>
+```
+
+---
+
+## style.css
+
+```css
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#fff8f2;
+    color:#333;
+}
+
+header{
+    background:#5d4037;
+    padding:18px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:white;
+    font-size:30px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#ffcc80;
+}
+
+.hero{
+    height:90vh;
+    background:
+    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+    url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?q=80&w=1600&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content h2{
+    font-size:60px;
+    color:white;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    color:white;
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 35px;
+    background:#ffb74d;
+    color:#4e342e;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#ffe0b2;
+}
+
+.about{
+    padding:90px 10%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:50px;
+    align-items:center;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:20px;
+}
+
+.about-text h2{
+    font-size:42px;
+    color:#5d4037;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:42px;
+    color:#5d4037;
+    margin-bottom:50px;
+}
+
+.menu{
+    padding:90px 8%;
+    background:#f7ede4;
+}
+
+.menu-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.menu-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.menu-card:hover{
+    transform:translateY(-10px);
+}
+
+.menu-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.menu-card h3{
+    font-size:28px;
+    color:#5d4037;
+    margin:20px;
+}
+
+.menu-card p{
+    margin:0 20px 20px;
+    color:#666;
+}
+
+.menu-card span{
+    display:block;
+    margin:0 20px 25px;
+    font-size:22px;
+    color:#ff9800;
+    font-weight:bold;
+}
+
+.gallery{
+    padding:90px 8%;
+}
+
+.gallery-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery-container img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:18px;
+    transition:0.3s;
+}
+
+.gallery-container img:hover{
+    transform:scale(1.04);
+}
+
+.contact{
+    padding:90px 8%;
+    background:#f7ede4;
+}
+
+.contact-form{
+    max-width:700px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    padding:16px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.contact-form button{
+    padding:16px;
+    background:#5d4037;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact-form button:hover{
+    background:#8d6e63;
+}
+
+footer{
+    background:#4e342e;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-content h2{
+        font-size:40px;
+    }
+
+}
+```
+
+---
+
+## How To Run
+
+1. Create a folder named `bakery-website`
+2. Create two files:
+
+   * `index.html`
+   * `style.css`
+3. Copy the code into the files.
+4. Open `index.html` in your browser.
